@@ -1,0 +1,137 @@
+<section class="level pt-6 pb-4">
+        <!-- back button -->
+        <button id="back-btn" class="button is-large is-ivisible is-white is-rounded level-left">
+          {{!-- <ion-icon name="arrow-back-outline"></ion-icon> --}}
+        </button>
+
+        <!-- title -->
+        {{!-- <div class="level-item">
+          <h1 class="title is-size-2 is-size-4-mobile is-uppercase has-text-centered has-text-weight-normal">G h o s t w r i t e r</h1>
+        </div> --}}
+
+        <!-- login icon => click for dropdown => who is logged in and a logout button -->
+        <div class="dropdown is-hoverable px-4 is-right level-right">
+        <div class="dropdown-trigger level-item">
+            <button class="button is-large is-white is-rounded" aria-haspopup="true" aria-controls="dropdown-menu">
+            <span class="icon is-large">
+                <img class="is-rounded" src="{{user.profileIcon}}" alt="profile icon">
+            </span>
+            </button>
+        </div>
+        <div class="dropdown-menu" id="dropdown-menu2" role="menu">
+            <div class="dropdown-content">
+            <div class="dropdown-item">
+                <p>{{user.name}} is logged in</p>
+            </div>
+            <hr class="dropdown-divider">
+            <a href="#" id="generate" class="dropdown-item">
+                go to admin generate article
+            </a>
+            <hr class="dropdown-divider">
+            <a href="#" id="return" class="dropdown-item">
+                return to mainpage
+            </a>
+            <hr class="dropdown-divider">
+            <a href="#" id="logout" class="dropdown-item">
+                logout
+            </a>
+        </div>
+        </div>
+    </section>
+
+{{!-- <h1>Ghost Writer</h1> --}}
+<h1 class="title is-size-2 is-size-4-mobile is-uppercase has-text-centered has-text-weight-normal">G h o s t w r i t e r</h1>
+<h1 class="title is-size-4 is-size-6-mobile has-text-centered has-text-weight-normal">admin inventory</h1>
+    <div class="results-wrapper" id="results-container1">
+        <div class="articles1">
+            <!-- Handlebars template will be inserted here -->
+        </div>
+    </div>
+    <script id="article-template" type="text/x-handlebars-template">
+        {{#each content as |contents|}}
+        <button display-article-id="{{contents.article_id}}", onclick="myFunction(event)">DELETE</button>
+        <label for="title"><b>Type In New Title:</b></label>
+        <input type="text" placeholder="Enter New Title" id="newTitle_{{contents.article_id}}" required>
+        <button display-article-id="{{contents.article_id}}", type="submit" , onclick="myEditFunction(event)">Confrim</button>
+        <a href="#" class="article-link" data-article-id="{{contents.article_id}}">
+            <div class="article">
+                <div class="article-container">
+                    <h2>
+                        {{#if contents.urlToImage}}
+                        <a href="{{contents.urlToImage}}" target="_blank" rel="noopener noreferrer">
+                            {{contents.Title}}
+                        </a>
+                        {{else}}
+                        {{contents.Title}}
+                        {{/if}}
+                    </h2>
+                    {{#if contents.Author}}
+                    <h4>Author: {{contents.Author}}</h4>
+                    {{/if}}
+                    {{#if contents.Description}}
+                    <p>{{contents.Description}}</p>
+                    {{else}}
+                    <p>No description available.</p>
+                    {{/if}}
+                    {{#if contents.category}}
+                    <p>{{contents.category}}</p>
+                    {{else}}
+                    <p>No category available.</p>
+                    {{/if}}
+                </div>
+                <div class="image-container">
+                    {{#if contents.urlToImage}}
+                    <a href="{{contents.urlToImage}}" target="_blank" rel="noopener noreferrer">
+                        <img src="{{contents.urlToImage}}" alt="{{contents.Title}}">
+                    </a>
+                    {{else}}
+                    <p>No image available.</p>
+                    {{/if}}
+                </div>
+            </div>
+        </a>
+        {{/each}}
+    </script>
+    <!-- Use the Handlebars library from a CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
+    <script src="/js/inventory.js"></script>
+    <script>
+      // Deletes article
+      async function myFunction(event) {
+        const clickedID = event.currentTarget;
+        const TestID = clickedID.getAttribute("display-article-id");
+        try {
+          const response = await fetch(`${document.location.origin}/api/admin/deleteArticle/${TestID}`, {
+            method: 'DELETE',
+          });
+          const deletedArticle = await response.json();
+          location.reload();
+          return deletedArticle;
+        }
+        catch (err) {
+          console.error('Error deleting article:', err);
+          throw err;
+        }
+      }
+      // Change title
+      async function myEditFunction(event) {
+          const clickedID = event.currentTarget;
+          const TestID = clickedID.getAttribute("display-article-id");
+          let newArticleTitle = document.getElementById(`newTitle_${TestID}`).value;
+          console.log(newArticleTitle);
+          try {
+          const response = await fetch(`${document.location.origin}/api/admin/updateTitle/${TestID}@${newArticleTitle}`, {
+          method: 'PUT',
+          });
+          const updatedArticle = await response.json();
+          location.reload();
+          return updatedArticle;
+          }
+          catch (err) {
+          console.error('Error deleting article:', err);
+          throw err;
+          }
+        }
+    </script>
+
+    <script src="/js/logout.js"></script>

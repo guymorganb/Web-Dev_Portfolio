@@ -1,0 +1,35 @@
+following the conventional naming and structure, name the files inside schema directory typeDefs.js. This directory will contain the GraphQL type definitions for your application. The schema in this directory aligns with the JSON file you extracted of all your java practice code.
+
+Here's a breakdown of the schema (typeDefs.js):
+
+CodeFile: Represents a single code file, with a fileName and code field.
+
+Category: Represents a category of code files, such as "Arrays" or "Arrays2D". 
+It has a name field and a list of files.
+
+Query: Defines the queries that clients can execute. There are two queries defined here: getCategories returns a list of all categories, and getCategory returns a single category by name.
+
+Mutation: Defines the mutations (or write operations) that clients can execute. There's one mutation defined here: addCodeFile adds a new code file to a specific category.
+
+This file should be saved inside your schema directory.
+Once you have this file in place, you can reference it in other parts of your code, like in your resolvers and Apollo Server configuration.
+
+Query Types: Your typeDefs defines queries getCategories and getCategory, but in your resolvers, you have codeFiles, codeFile, categories, and category. You should align these with the queries defined in your typeDefs.
+
+Mutation Types: Your typeDefs defines one mutation addCodeFile, but your resolvers define createCodeFile, updateCodeFile, deleteCodeFile, createCategory, and possibly more for updating and deleting categories.
+
+Here's a summary of what these mutations do:
+createCategory: Creates a new category.
+
+createFile: Creates a new file within a specified category.
+
+updateCategory: Updates an existing category's name.
+
+updateFile: Updates an existing file within a specified category.
+
+deleteCategory: Deletes an existing category.
+
+deleteFile: Deletes a specific file within a specified category.
+
+These mutation definitions are just the first step. The next step is to create the 
+corresponding resolvers to handle these operations.

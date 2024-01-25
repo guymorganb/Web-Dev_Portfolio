@@ -1,0 +1,158 @@
+[
+  {
+    "first_name": "John",
+    "last_name": "Doe",
+    "username": "JohnDoe57",
+    "email": "john.doe@example.com",
+    "password_hash": "Password1!",
+    "role": "admin",
+    "dob": "05-11-1954",
+    "zip": "78582",
+    "createdAt": "2023-07-01T10:00:00Z",
+    "updatedAt": "2023-07-01T10:00:00Z",
+    "sessions": [
+      {
+        "session_token": "sessiontoken1",
+        "expires_at": "2023-07-15T10:00:00Z",
+        "createdAt": "2023-07-01T10:00:00Z",
+        "updatedAt": "2023-07-01T10:00:00Z"
+      }
+    ],
+    "posts": [
+      {
+        "title": "Introduction to Tech Blogging",
+        "body": "In this post, we will explore the basics of tech blogging.",
+        "comments": [
+          {
+            "username": "MikeJohnson95",
+            "content": "Great post!",
+            "createdAt": "2023-07-01T11:00:00Z",
+            "updatedAt": "2023-07-01T11:00:00Z"
+          },
+          {
+            "username": "JaneSmith24",
+            "content": "Thanks for sharing!",
+            "createdAt": "2023-07-01T12:00:00Z",
+            "updatedAt": "2023-07-01T12:00:00Z"
+          }
+        ]
+      },
+      {
+        "title": "Tips for Writing Engaging Tech Content",
+        "body": "Learn some valuable tips for writing engaging tech content.",
+        "comments": [
+          {
+            "username": "JaneSmith24",
+            "content": "Nice work!",
+            "createdAt": "2023-07-01T13:00:00Z",
+            "updatedAt": "2023-07-01T13:00:00Z"
+          },
+          {
+            "username": "MikeJohnson95",
+            "content": "Looking forward to more of your posts!",
+            "createdAt": "2023-07-01T14:00:00Z",
+            "updatedAt": "2023-07-01T14:00:00Z"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "first_name": "Jane",
+    "last_name": "Smith",
+    "username": "JaneSmith24",
+    "email": "jane.smith@example.com",
+    "password_hash": "Secure@123",
+    "role": "user",
+    "dob": "10-13-1986",
+    "zip": "81623",
+    "createdAt": "2023-07-02T12:30:00Z",
+    "updatedAt": "2023-07-02T12:30:00Z",
+    "sessions": [
+      {
+        "session_token": "sessiontoken2",
+        "expires_at": "2023-07-16T12:30:00Z",
+        "createdAt": "2023-07-02T12:30:00Z",
+        "updatedAt": "2023-07-02T12:30:00Z"
+      }
+    ],
+    "posts": [
+      {
+        "title": "The Latest Tech Innovations",
+        "body": "Discover the latest tech innovations that are shaping the future.",
+        "comments": [
+          {
+            "username": "JohnDoe57",
+            "content": "Great read!",
+            "createdAt": "2023-07-02T13:30:00Z",
+            "updatedAt": "2023-07-02T13:30:00Z"
+          },
+          {
+            "username": "MikeJohnson95",
+            "content": "Very informative.",
+            "createdAt": "2023-07-02T14:30:00Z",
+            "updatedAt": "2023-07-02T14:30:00Z"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "first_name": "Mike",
+    "last_name": "Johnson",
+    "username": "MikeJohnson95",
+    "email": "mike.johnson@example.com",
+    "password_hash": "Data$4567",
+    "role": "user",
+    "dob": "03-01-1965",
+    "zip": "80211",
+    "createdAt": "2023-07-03T14:45:00Z",
+    "updatedAt": "2023-07-03T14:45:00Z",
+    "sessions": [
+      {
+        "session_token": "sessiontoken3",
+        "expires_at": "2023-07-17T14:45:00Z",
+        "createdAt": "2023-07-03T14:45:00Z",
+        "updatedAt": "2023-07-03T14:45:00Z"
+      }
+    ],
+    "posts": [
+      {
+        "title": "The Impact of AI in Tech Industry",
+        "body": "Explore the impact of AI on various sectors of the tech industry.",
+        "comments": [
+          {
+            "username": "JohnDoe57",
+            "content": "Interesting article!",
+            "createdAt": "2023-07-03T15:45:00Z",
+            "updatedAt": "2023-07-03T15:45:00Z"
+          },
+          {
+            "username": "JaneSmith24",
+            "content": "Well-written and thought-provoking.",
+            "createdAt": "2023-07-03T16:45:00Z",
+            "updatedAt": "2023-07-03T16:45:00Z"
+          }
+        ]
+      },
+      {
+        "title": "Understanding the Basics of Machine Learning",
+        "body": "Delve into the fundamentals of machine learning and its applications.",
+        "comments": [
+          {
+            "username": "JohnDoe57",
+            "content": "Loved this! Very helpful.",
+            "createdAt": "2023-07-03T17:45:00Z",
+            "updatedAt": "2023-07-03T17:45:00Z"
+          },
+          {
+            "username": "JaneSmith24",
+            "content": "Excellent resource for beginners.",
+            "createdAt": "2023-07-03T18:45:00Z",
+            "updatedAt": "2023-07-03T18:45:00Z"
+          }
+        ]
+      }
+    ]
+  }
+]

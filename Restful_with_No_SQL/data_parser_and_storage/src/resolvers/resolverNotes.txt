@@ -1,0 +1,15 @@
+Now we'll create resolvers for the GraphQL schema. Resolvers are functions that handle how the data for the fields of your schema's types are fetched. In this context, they'll be responsible for fetching the data for your CodeFile and Category models from MongoDB.
+
+We'll start by defining the Query and Mutation resolvers.
+
+1. Query Resolvers
+Query resolvers are used to fetch data. Here's how you might define the resolvers for the CodeFile and Category types.
+
+2. Mutation Resolvers
+Mutation resolvers are used to modify data (such as creating, updating, or deleting records). Here's how you might define mutation resolvers for CodeFile and Category.
+
+Populate files in Queries: When querying categories, we are using Mongoose's populate method to automatically replace the files field with the actual code file documents in the Category queries.
+
+Create Code File with Category Name: In the createCodeFile mutation, I've added logic to associate the newly created code file with a category by its name. This includes looking up the category by name, adding the new code file to the category's files array, and saving the category.
+
+Delete Code File with Category Name: Similar to creation, I've added logic in the deleteCodeFile mutation to remove the code file from the category's files array.

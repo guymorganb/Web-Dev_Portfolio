@@ -1,0 +1,167 @@
+<body>
+    <section class="level pt-6 pb-4">
+        <!-- inivisible button just balancing out the page -->
+        <button class="button is-large is-invisible is-white is-rounded level-left">
+        </button>
+
+        <!-- title -->
+        <div class="level-item">
+          <h1 class="title is-size-2 is-size-4-mobile is-uppercase has-text-centered has-text-weight-normal">G h o s t w r i t e r</h1>
+        </div>
+
+        <!-- login icon => click for dropdown => who is logged in and a logout button -->
+        <div class="dropdown is-hoverable px-4 is-right level-right">
+        <div class="dropdown-trigger level-item">
+            <button class="button is-large is-white is-rounded" aria-haspopup="true" aria-controls="dropdown-menu">
+            <span class="icon is-large">
+                <img class="is-rounded" src="{{user.profileIcon}}" alt="profile icon">
+            </span>
+            </button>
+        </div>
+        <div class="dropdown-menu" id="dropdown-menu2" role="menu">
+            <div class="dropdown-content">
+            <div class="dropdown-item">
+                <p>{{user.name}} is logged in</p>
+            </div>
+            {{!-- {{#if user.isAdmin}} --}}
+            <hr class="dropdown-divider">
+            <a onclick="document.location.replace('/api/admin/inventory')" href="#" class="dropdown-item">
+                admin
+            </a>
+            {{!-- {{/if}} --}}
+            <hr class="dropdown-divider">
+            <a href="#" id="logout" class="dropdown-item">
+                logout
+            </a>
+        </div>
+        </div>
+    </section>
+
+    <!-- search bar -->
+    {{!-- <div class="field has-addons has-addons-centered container is-fluid">
+        <p class="control">
+            <a class="button search-btn">
+              <ion-icon name="search-outline"></ion-icon>
+            </a>
+        </p>
+        <div class="control is-expanded has-icon-left">
+            <input class="input" type="text" placeholder="SEARCH GHOSTWRITER" aria-label="search">
+        </div>
+      </div> --}}
+    <!-- not sure mvp needs a search bar -->
+
+    <!-- category selection tabs (tablet and bigger) -->
+      <div class="tabs is-centered ">
+        <ul>
+          <li class="tablinks" data-target="for-you">
+            <a>for you</a>
+          </li>
+          <li class="tablinks" data-target="business">
+            <a>business</a>
+          </li>
+          <li class="tablinks" data-target="entertainment">
+            <a>entertainment</a>
+          </li>
+          <li class="tablinks" data-target="general">
+            <a>general</a>
+          </li>
+          <li class="tablinks" data-target="health">
+            <a>health</a>
+          </li>
+          <li class="tablinks" data-target="science">
+            <a>science</a>
+          </li>
+          <li class="tablinks" data-target="sports">
+            <a>sports</a>
+          </li>
+          <li class="tablinks" data-target="technology">
+            <a>technology</a>
+          </li>
+        </ul>
+      </div>
+      
+      <!-- tab content -->
+      <div class="tabcontent">
+        <!-- cards with the  title, author, description, picture, and tag (dynamically added) -->
+        {{#each content as |contents|}}
+        <div id="{{article_id}}" class="card is-horizontal container article is-fluid is-clickable"> 
+            <div class="card-image is-right is-small">
+              <figure class="image is-2by1">
+                <img
+                  src="{{urlToImage}}"
+                  alt="news image"
+                />
+              </figure>
+            </div>
+            <div class="card-content">
+              <div class="media">
+                <div class="media-content">
+                  <p class="title is-4">{{Title}}</p>
+                  <p class="subtitle is-5">{{Author}}</p>
+                  <p>{{Date}}</p>
+                </div>
+              </div>
+              <div class="content">
+                <p>{{Description}}</p>
+                <span class="tag is-medium">
+                    {{category}}
+                </span>
+              </div>
+          </div>
+        </div>
+      </div>
+      {{/each}}
+
+    <!-- pagination -->
+    {{!-- <nav class="pagination is-centered container is-fluid" role="navigation" aria-label="pagination">
+        <a class="pagination-previous">Previous</a>
+        <a class="pagination-next">Next page</a>
+        <ul class="pagination-list">
+          <li><a class="pagination-link" aria-label="Goto page 1">1</a></li>
+          <li><span class="pagination-ellipsis">&hellip;</span></li>
+          <li><a class="pagination-link" aria-label="Goto page 45">45</a></li>
+          <li><a class="pagination-link is-current" aria-label="Page 46" aria-current="page">46</a></li>
+          <li><a class="pagination-link" aria-label="Goto page 47">47</a></li>
+          <li><span class="pagination-ellipsis">&hellip;</span></li>
+          <li><a class="pagination-link" aria-label="Goto page 86">86</a></li>
+        </ul>
+    </nav> --}}
+
+  
+   {{!-- error message - invalid input --}}
+   <article class="message is-hidden" id="errorMessage">
+     <div class="message-header">
+       <p>Oops!</p>
+      <button class="delete" id="delete-btn" aria-label="delete"></button>
+       </div>
+       <div class="message-body">
+        Something went wrong. Please reload and try again.
+      </div>
+    </article>
+
+     {{!-- error message - logout error --}}
+   <article class="message is-hidden" id="errorMessage-logout">
+     <div class="message-header">
+       <p>Oops!</p>
+      <button class="delete" id="delete-btn-2" aria-label="delete"></button>
+       </div>
+       <div class="message-body">
+        Something went wrong. Please reload and try again.
+      </div>
+    </article>
+
+  <footer class="footer">
+    <div class="content has-text-centered">
+      <p>
+        <strong>GHOSTWRITER</strong> by <a href="https://github.com/javieb5186">Javier</a>, <a href="https://github.com/DanielFord11">Daniel</a>, <a href="https://github.com/markymark97">Mark</a>, and <a href="https://github.com/Sarah-Paterson">Sarah</a>. The source code is licensed
+        <a href="http://opensource.org/licenses/mit-license.php">MIT</a>.
+      </p>
+    </div>
+  </footer>
+
+    <!-- scripts -->
+    <script src="/js/mainpage.js"></script>
+    <script src="/js/logout.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>

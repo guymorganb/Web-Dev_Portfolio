@@ -1,0 +1,10 @@
+
+export const ADD_EXPERIENCE = "ADD_EXPERIENCE"
+// add comments later
+export const ADD_MASSAGE_TYPE = "ADD_MASSAGE_TYPE"
+
+export const ADD_INTENSITY = "ADD_INTENSITY"
+
+export const ADD_LOOKING_FOR = "ADD_LOOKING_FOR"
+
+export const ADD_WHERESYOUR_PAIN = "ADD_WHERESYOUR_PAIN"

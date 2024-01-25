@@ -1,0 +1,25 @@
+{
+    "name": "recoveryrx-massage-spa",
+    "private": true,
+    "version": "1.0.0",
+    "type": "module",
+    "main": "server/server.js",
+    "scripts": {
+        "start": "node server/server.js",
+        "heroku-postbuild": "npm install --prefix server && npm install --prefix client && npm run build --prefix client",
+        "dev": "concurrently \"cd server && npm run watch\" \"cd client && npm run dev\""
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "concurrently": "^5.1.0"
+    },
+    "dependencies": {
+        "@apollo/server": "^4.9.3",
+        "@apollo/usage-reporting-protobuf": "^4.1.1",
+        "@apollo/utils.fetcher": "^3.0.0",
+        "react-dom-confetti": "^0.2.0",
+        "readme-md-generator": "^1.0.0"
+    }
+}
