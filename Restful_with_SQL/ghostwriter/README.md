@@ -4,8 +4,6 @@
 
 Ghostwriter is a news web application with a twist. Here, you can rediscover current news through the lens of history’s favorite authors. Would you rather read about the McDonalds chicken nugget lawsuit in the boring traditional way, or would you like to gain the same information written by Dr Suess? Ghostwriter is a web application where you can login and read about modern events written by Mery Shelley, Shel Silverstein, Carl Sagan, or other literary favorites.
 
-[Here is a link to the live webpage in Heroku](https://stormy-plains-32549-a1bc163e95b5.herokuapp.com/).
-
 ---
 ---
 
@@ -68,14 +66,6 @@ Due to the nature of this project, the team had to implement a secret .env file 
 
 ---
 
-## Credits
-
-Our MVP Admin / Creator team:
-Javier - https://github.com/javieb5186
-Daniel - https://github.com/Dmford11 , https://github.com/DanielFord11
-Mark - https://github.com/markymark97
-Sarah - https://github.com/Sarah-Paterson
-
 Technologies Used:
 
 Bulma CSS Framework - https://bulma.io/
@@ -90,19 +80,12 @@ Squelize - https://sequelize.org/
 Chat GPT - https://chat.openai.com/auth/login
 News API - https://newsapi.org/
 
-Helpful Reference Code:
-
-
-The Coding Bootcamp repositories for Boot Camp Curriculum Lesson Plans: https://github.com/coding-boot-camp
-
 Helpful Resources:
 
 W3 School’s information about JavaScript: https://www.w3schools.com/js/default.asp
 Stack Overflow’s answered questions about JavaScript: https://stackoverflow.com/
 MDN’s information on JavaScript: https://developer.mozilla.org/en-US/
 Google.com helping me find the above resources
-
-The README template I used was provided by The Full-Stack Blog: https://coding-boot-camp.github.io/full-stack/github/professional-readme-guide
 
 ---
 
